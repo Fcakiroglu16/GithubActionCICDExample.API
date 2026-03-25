@@ -11,9 +11,9 @@ EXPOSE 8080
 FROM mcr.microsoft.com/dotnet/sdk:10.0 AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
-COPY ["GithubActionCICDExample.API/GithubActionCICDExample.API.csproj", "GithubActionCICDExample.API/"]
+COPY ["GithubActionCICDExample.API.csproj", "GithubActionCICDExample.API/"]
 RUN dotnet restore "./GithubActionCICDExample.API/GithubActionCICDExample.API.csproj"
-COPY . .
+COPY . ./GithubActionCICDExample.API/
 WORKDIR "/src/GithubActionCICDExample.API"
 RUN dotnet build "./GithubActionCICDExample.API.csproj" -c $BUILD_CONFIGURATION -o /app/build
 
