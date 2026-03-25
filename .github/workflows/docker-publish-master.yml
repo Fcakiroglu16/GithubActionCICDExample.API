@@ -163,6 +163,10 @@ jobs:
             type=semver,pattern={{version}}
             type=semver,pattern={{major}}.{{minor}}
 
+      - name: Set lowercase image name
+        id: image
+        run: echo "name=ghcr.io/${GITHUB_REPOSITORY,,}" >> $GITHUB_OUTPUT
+
       - name: Build and push Docker image
         uses: docker/build-push-action@v6
         with:
@@ -179,7 +183,7 @@ jobs:
       - name: Scan Docker image for vulnerabilities
         uses: aquasecurity/trivy-action@master
         with:
-          image-ref: ghcr.io/${{ github.repository }}:latest
+          image-ref: ${{ steps.image.outputs.name }}:latest
           format: sarif
           output: trivy-results.sarif
           severity: CRITICAL,HIGH
@@ -193,7 +197,7 @@ jobs:
 
       - name: Smoke test — verify container starts
         run: |
-          IMAGE="ghcr.io/${{ github.repository }}:latest"
+          IMAGE="${{ steps.image.outputs.name }}:latest"
           CONTAINER_ID=$(docker run -d -p 8080:8080 "$IMAGE")
           echo "Container started: $CONTAINER_ID"
 
