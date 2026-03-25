@@ -5,6 +5,10 @@
       <DataCollector friendlyName="XPlat Code Coverage">
         <Configuration>
           <ExcludeByFile>**/Program.cs</ExcludeByFile>
+          <ExcludeByAttribute>ExcludeFromCodeCoverage,CompilerGenerated,GeneratedCode</ExcludeByAttribute>
+          <ModulePathsExclude>
+            <ModulePath>.*\.Tests\.dll$</ModulePath>
+          </ModulePathsExclude>
         </Configuration>
       </DataCollector>
     </DataCollectors>
