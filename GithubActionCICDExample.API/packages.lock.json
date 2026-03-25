@@ -11,11 +11,33 @@
           "Microsoft.OpenApi": "2.0.0"
         }
       },
+      "Microsoft.EntityFrameworkCore.InMemory": {
+        "type": "Direct",
+        "requested": "[10.0.0-preview.3.25171.6, )",
+        "resolved": "10.0.0-preview.3.25171.6",
+        "contentHash": "0h1kavFp5VJgMWecziETnSv0bVKln05GZO3lDEinoNfH//EVUFdon7kJ/CO4EZJn28CoEXTUWTm5I1y2zMYtyw==",
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore": "10.0.0-preview.3.25171.6"
+        }
+      },
       "Microsoft.VisualStudio.Azure.Containers.Tools.Targets": {
         "type": "Direct",
         "requested": "[1.23.0, )",
         "resolved": "1.23.0",
         "contentHash": "2wDnb4umupJZ/1ikgWozFVpggH1mlHQFc0odXVv2ZagL3RYwXgW9zmC15fiqIBzmaC0vLZUnLGwDY+p8ZR7Syw=="
+      },
+      "Microsoft.EntityFrameworkCore": {
+        "type": "Transitive",
+        "resolved": "10.0.0-preview.3.25171.6",
+        "contentHash": "hGlI94rtMbyG23FZae9UZTLXN4pA6ai+DXg12bycJGlXFNy/27i6En030w3iGU19VIt0Cpb3/kQAWaPYUiCGng==",
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore.Abstractions": "10.0.0-preview.3.25171.6"
+        }
+      },
+      "Microsoft.EntityFrameworkCore.Abstractions": {
+        "type": "Transitive",
+        "resolved": "10.0.0-preview.3.25171.6",
+        "contentHash": "rB1DoKy4rwrMSD0p/xYvZiGAq6UQc5cfrFPLLnYg3wBN3MeN+ZGasA2FXRT2r1EmAOM4VF0qQSvhUbHQh4DHnQ=="
       },
       "Microsoft.OpenApi": {
         "type": "Transitive",
