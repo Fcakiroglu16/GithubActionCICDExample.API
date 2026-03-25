@@ -1,0 +1,6 @@
+@GithubActionCICDExample.API_HostAddress = http://localhost:5298
+
+GET {{GithubActionCICDExample.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
